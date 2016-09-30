@@ -1,17 +1,176 @@
 // Imports
-
-
+@import 'partials/reset';
+@import 'partials/general_styles';
+@import 'partials/clearfix';
 
 // 1. Many small items in a grid
+.small-grid-flexbox {
+	ul {
+		display: flex;
+		flex-flow: row wrap;
+		width: 400px;
+		margin: auto;
+		li {
+			height: 40px;
+			flex: 0 0 40px;
+			text-align: center;
+			line-height: 40px;
+			box-sizing: border-box;
+		}
+	}
+
+}
 
 
 
 // 2. 2-Column Grid
 
+@media screen and (min-width: 900px) {
+	.two-col-grid-flexbox {
+		display: flex;
+		flex-flow: row wrap;
 
+		.column-1 {
+			flex: 0 0 50%;
+			order: 2;
+			box-sizing: border-box;
+		}
+		.column-2 {
+			flex: 0 0 50%;
+			order: 1;
+			box-sizing: border-box;
+		}
+	}
+}
 
 // 3. Centering
+.centering-formula-1 {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
 
+	.centered {
+		flex: 0 0 20%;
+	}
+}
+
+.centering-formula-2 {
+	display: flex;
+	flex-flow: row nowrap;
+
+	.centered {
+		flex: 0 0 20%;
+		margin: auto;
+	}
+}
 
 
 // 4. Ordering
+
+
+@media screen and (min-width: 0px) {
+	.ordering-block {
+		display: flex;
+		flex-flow: row wrap;
+
+		.item-a {
+			flex: 0 0 100%;
+			order: 3;
+			box-sizing: border-box;
+		}
+		.item-b {
+			flex: 0 0 100%;
+			order: 2;
+			box-sizing: border-box;
+		}
+		.item-c {
+			flex: 0 0 100%;
+			order: 1;
+			box-sizing: border-box;
+		}
+		.item-d {
+			flex: 0 0 100%;
+			order: 4;
+			box-sizing: border-box;
+		}
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.ordering-block {
+		display: flex;
+		flex-flow: row nowrap;
+
+		.item-a {
+			flex: 1 0 20px;
+			order: 1;
+			box-sizing: border-box;
+		}
+		.item-b {
+			flex: 2 0 20px;
+			order: 2;
+			box-sizing: border-box;
+		}
+		.item-c {
+			flex: 3 0 20px;
+			order: 3;
+			box-sizing: border-box;
+		}
+		.item-d {
+			flex: 4 0 20px;
+			order: 4;
+			box-sizing: border-box;
+		}
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.ordering-block {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+
+		.item-a {
+			flex: 0 0 100px;
+			order: 4;
+			box-sizing: border-box;
+		}
+		.item-b {
+			flex: 0 0 205px;
+			order: 3;
+			box-sizing: border-box;
+		}
+		.item-c {
+			flex: 0 0 20px;
+			order: 2;
+			box-sizing: border-box;
+		}
+		.item-d {
+			flex: 0 0 80px;
+			order: 1;
+			box-sizing: border-box;
+		}
+	}
+}
+
+.extra-block {
+	display: flex;
+	flex-flow: column wrap;
+
+	.item-a {
+		@include respond-to(medium) {
+			
+		}
+	}
+	.item-b {
+
+	}
+	.item-c {
+
+	}
+	.item-d {
+
+	}
+}
+
